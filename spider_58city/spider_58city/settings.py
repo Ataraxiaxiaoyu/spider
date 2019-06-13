@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for zhihu project
+# Scrapy settings for spider_58city project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,17 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'zhihu'
+# LOG_LEVEL = 'DEBUG'  # CRITICAL, ERROR, WARNING, INFO, DEBUG
+LOG_LEVEL = 'DEBUG'  # CRITICAL, ERROR, WARNING, INFO, DEBUG
 
-SPIDER_MODULES = ['zhihu.spiders']
-NEWSPIDER_MODULE = 'zhihu.spiders'
+BOT_NAME = 'spider_58city'
+
+SPIDER_MODULES = ['spider_58city.spiders']
+NEWSPIDER_MODULE = 'spider_58city.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'zhihu (+http://www.yourdomain.com)'
+#USER_AGENT = 'spider_58city (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -47,13 +50,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'zhihu.middlewares.ZhihuSpiderMiddleware': 543,
+#    'spider_58city.middlewares.Spider58CitySpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'zhihu.middlewares.ZhihuDownloaderMiddleware': 543,
+#    'spider_58city.middlewares.Spider58CityDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -64,9 +67,9 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'zhihu.pipelines.ZhihuPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'spider_58city.pipelines.Spider58CityPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
